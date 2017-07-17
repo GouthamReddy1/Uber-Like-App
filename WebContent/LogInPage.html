@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html   lang="en">
+    <head>
+        <title>Login Form</title>
+ 
+        <meta charset="UTF-8" />
+        <link rel="stylesheet" type="text/css" href="default.css"/>
+        <link rel="stylesheet" href="//code.jquery.com/ui/1.11.4/themes/smoothness/jquery-ui.css">
+  		<script src="//code.jquery.com/jquery-1.10.2.js"></script>
+  		<script src="//code.jquery.com/ui/1.11.4/jquery-ui.js"></script>
+  	</head>
+    <body>  
+
+    	<script type="text/javascript">
+    	 <% 
+    	  //String PickUpPlace = (String)request.getAttribute("PickUpPlace"); 
+    	 // String DropUpPlace = (String)request.getAttribute("DropUpPlace"); 
+    	  System.out.println("PickUpPlace");
+    	  %> 
+    	
+//     	$(document).ready(function(){
+    		
+//     	});
+    	$(function() {
+    		// alert("message");
+    		    $( "#datepicker" ).datepicker({ changeMonth: true,minDate: +1 });
+    		    $( "#datepickerdob" ).datepicker({maxDate: "-1D"});
+    		    
+    		  //  alert("message23");
+    		  });
+		   
+	        function validateForm(form) {
+				alert("message"+form);
+	        	var status = true;
+	       // 	var userName = form.userName.value;
+	        	var emailId = form.emailId;
+	        	/* var emaiId1 = form.repeatEmailId; */
+	        	var userPassword = form.userPassword;
+	        	/* var userPassword1 = form.repeatUserPassword; */
+ 	            /* var fName = form.fName;
+ 	            var lName = form.lName;
+	            var phoneNo = form.phoneNo;
+	            var street = form.street;
+	            var city = form.city;
+ 	            var state = form.state;	
+	            var country = form.country;
+	            var pincode = form.pincode;
+	            var gender = form.gender;
+	            var dob = form.dob;
+	             */
+	            
+ 	           if (!($('input[name=gender]:checked').length > 0)) {
+ 	        	  document.getElementById('emailId').innerHTML='Entered email id does not match';
+ 	        	   alert("chl");
+ 	        	    status=false;
+ 	        	}
+	             alert(emailId+" message1 "+emailId1);
+ 	          alert("message2");
+ 	           if(!(emaiId1 == emailId)){
+ 	        	  document.getElementById('genderErrormessage').innerHTML='gender is required';
+ 	        	   status=false;
+ 	        	   
+ 	           }
+ 	          form.myButton.disabled = true;
+ 	         	return true;
+ 	          //  return false;
+	        }
+	        
+	     
+
+        </script>
+    
+       
+            <h1>Login</h1>
+            <fieldset class="row1">
+                <legend>Log in Details
+                </legend>
+                 <form method="post" class="register" id="registrationForm" action="Controller?action=login"  onsubmit="return validateForm(this);">
+                <p>
+                    <label>User Id *</label>
+                    <input type="text" id="userName" name="userName" maxlength="10" placeholder="UserName" />                
+                </p>
+                
+                <p>
+                    <label>Password*
+                    </label>
+                    <input type="password" id="userPassword" name="userPassword" maxlength="25" placeholder="Password"/>
+                </p>
+            
+                        <br />
+                        <br />
+                <p>                
+                    <input type="checkbox" value=""/>
+                    <label>Remember Username</label>
+                   </p>
+                   
+                  <br />
+                  <br />
+                   <p>
+                    Forgot Username/Password ?? <a href="#"> <i>Click Here!!! </i>>>></a>
+                    </p>
+               <input type="submit" class="button" name="login" value="Login &raquo;" ></input>     
+            <a href='HomePage.html' class="button alt">Cancel</a>
+            </form>
+            
+             <!-- <input type="cancel" class="button" name="Cancel" value="cancel &raquo;" ></input> -->
+             
+                   
+            </fieldset>
+         
+                         
+       
+       
+    </body>
+</html>
+
+
+
+
+
